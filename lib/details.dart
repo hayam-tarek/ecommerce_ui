@@ -17,10 +17,10 @@ class _DetailsState extends State<Details> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer: Drawer(),
+      endDrawer: const Drawer(),
       key: scaffoldStateKey,
       bottomNavigationBar: BottomNavigationBar(
-          selectedIconTheme: IconThemeData(size: 35),
+          selectedIconTheme: const IconThemeData(size: 35),
           iconSize: 30,
           selectedFontSize: 15,
           unselectedFontSize: 10,
@@ -40,14 +40,14 @@ class _DetailsState extends State<Details> {
                 label: "Profile", icon: Icon(Icons.person_2_outlined)),
           ]),
       body: Container(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: ListView(
           children: [
             Row(
               children: [
                 Expanded(
                     child: IconButton(
-                  icon: Icon(Icons.arrow_back_outlined),
+                  icon: const Icon(Icons.arrow_back_outlined),
                   onPressed: () {
                     Navigator.pop(context);
                   },
@@ -65,7 +65,7 @@ class _DetailsState extends State<Details> {
                       onPressed: () {
                         scaffoldStateKey.currentState!.openEndDrawer();
                       },
-                      icon: Image(
+                      icon: const Image(
                         image: AssetImage(
                           "images/icon.png",
                         ),
@@ -79,27 +79,28 @@ class _DetailsState extends State<Details> {
               child: Image.asset(widget.data["image"]),
             ),
             Container(
-              margin: EdgeInsets.symmetric(vertical: 20),
+              margin: const EdgeInsets.symmetric(vertical: 20),
               alignment: Alignment.center,
               child: Text(
                 "${widget.data["title"]}",
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
             ),
             Container(
-              margin: EdgeInsets.only(bottom: 20),
+              margin: const EdgeInsets.only(bottom: 20),
               alignment: Alignment.center,
               child: Text(
-                "Rating: " + "${widget.data["rating"]}",
-                style: TextStyle(fontSize: 20, color: Colors.grey),
+                "Rating: " "${widget.data["rating"]}",
+                style: const TextStyle(fontSize: 20, color: Colors.grey),
               ),
             ),
             Container(
-              margin: EdgeInsets.only(bottom: 20),
+              margin: const EdgeInsets.only(bottom: 20),
               alignment: Alignment.center,
               child: Text(
-                "${widget.data["price"]}" + r"$",
-                style: TextStyle(
+                "${widget.data["price"]}" r"$",
+                style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: Colors.orange),
@@ -108,7 +109,7 @@ class _DetailsState extends State<Details> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Expanded(
+                const Expanded(
                   child: Text(
                     "Color:",
                     style: TextStyle(fontSize: 20),
@@ -119,7 +120,7 @@ class _DetailsState extends State<Details> {
                   child: RadioListTile(
                     activeColor: Colors.black,
                     value: "black",
-                    title: Text("Black"),
+                    title: const Text("Black"),
                     groupValue: color,
                     onChanged: (value) {
                       setState(() {
@@ -133,7 +134,7 @@ class _DetailsState extends State<Details> {
                   child: RadioListTile(
                     activeColor: Colors.black,
                     value: "red",
-                    title: Text("Red"),
+                    title: const Text("Red"),
                     groupValue: color,
                     onChanged: (value) {
                       setState(() {
@@ -144,7 +145,7 @@ class _DetailsState extends State<Details> {
                 ),
               ],
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Expanded(
@@ -163,12 +164,12 @@ class _DetailsState extends State<Details> {
               height: 20,
             ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 100),
+              margin: const EdgeInsets.symmetric(horizontal: 100),
               child: MaterialButton(
                 color: Colors.black,
                 textColor: Colors.white,
                 onPressed: () {},
-                child: Text(
+                child: const Text(
                   "Add to chart",
                   style: TextStyle(fontSize: 20),
                 ),
